@@ -8,8 +8,7 @@ def _compute_slide_channel_count(self):
         partner.slide_channel_count = data.get(partner.id, 0)
 
 
-
- def _compute_slide_channel_company_count(self):
+def _compute_slide_channel_company_count(self):
         for partner in self:
             if partner.is_company:
                 partner.slide_channel_company_count = self.env['slide.channel'].sudo().search_count(
