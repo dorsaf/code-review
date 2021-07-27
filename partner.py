@@ -32,10 +32,3 @@ class ResPartner(models.Model):
             },
             'context': "{'model':'account.partner.ledger'}"
         }
-
-
-def _get_bank_statements_available_import_formats(self):
-    rslt = super(AccountJournal, self)._get_bank_statements_available_import_formats()
-    rslt.append('QIF')
-    return rslt
-
