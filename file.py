@@ -1,6 +1,6 @@
-def sum_of_list(l):
+def sum_of_list(mylist):
   total = 0
-  for val in l:
+  for val in mylist:
     total = total + val
   return total
 
