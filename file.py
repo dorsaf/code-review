@@ -1,18 +1,8 @@
-def _compute_slide_channel_count(self):
-    read_group_res = self.env['slide.channel.partner'].sudo().read_group(
-        [('partner_id', 'in', self.ids)],
-        ['partner_id'], 'partner_id'
-    )
-    data = dict((res['partner_id'][0], res['partner_id_count']) for res in read_group_res)
-    for partner in self:
-        partner.slide_channel_count = data.get(partner.id, 0)
+def sum_of_list(l):
+  total = 0
+  for val in l:
+    total = total + val
+  return total
 
-
-def _compute_slide_channel_company_count(self):
-        for partner in self:
-            if partner.is_company:
-                partner.slide_channel_company_count = self.env['slide.channel'].sudo().search_count(
-                    [('partner_ids', 'in', partner.child_ids.ids)]
-                )
-            else:
-                partner.slide_channel_company_count = 0
+my_list = [1,3,5,2,4]
+print( "The sum of my_list is", sum_of_list(my_list))
